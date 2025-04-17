@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Password Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Manager</h1>
+
+        <div class="top-panel">
+            <form id="add-password-form" class="form-box">
+                <input type="text" id="service" placeholder="Service" required>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="text" id="password" placeholder="Password" required>
+                <button type="submit">Add</button>
+                <button type="button" id="generate-btn">Generate</button>
+                <div id="strength-indicator"></div>
+            </form>
+        </div>
+
+        <div id="passwords-container"></div>
+
+        <div id="system-password-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Enter Master Password</h3>
+                <input type="password" id="system-password" placeholder="Master Password">
+                <button id="confirm-password-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
